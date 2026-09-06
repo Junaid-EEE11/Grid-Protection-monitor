@@ -1,0 +1,23 @@
+! Master File for IEEE 123-Bus Unbalanced Distribution Feeder
+! Benchmark model adapted for reproducible fault detection and localization research
+
+Clear
+
+New Circuit.IEEE123Bus basekv=115 pu=1.00 phases=3 bus1=sourcebus Angle=0 MVAsc3=20000 MVASC1=21000
+
+! Substation Transformer: 115 kV Delta to 4.16 kV Grounded Wye, 5 MVA
+New Transformer.Sub Phases=3 Windings=2 XHL=8.0 Buses=[sourcebus.1.2.3 150.1.2.3] Conns=[delta wye] kvas=[5000 5000] kvs=[115 4.16] %r=0.5
+
+! Load component definitions
+Redirect LineCodes.dss
+Redirect IEEE123Lines.dss
+Redirect IEEE123Loads.dss
+Redirect Capacitors.dss
+Redirect Regulators.dss
+
+! Voltage bases configuration
+Set voltagebases=[115.0, 4.16, 2.4, 0.48]
+Calcvoltagebases
+
+! Bus coordinates for visual plotting
+Buscoords BusCoords.dss

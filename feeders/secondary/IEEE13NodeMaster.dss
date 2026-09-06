@@ -1,0 +1,15 @@
+! Master File for IEEE 13-Bus Secondary Validation Feeder
+
+Clear
+
+New Circuit.IEEE13Nodeckt basekv=115 pu=1.00 phases=3 bus1=sourcebus Angle=0 MVAsc3=20000 MVASC1=21000
+
+Redirect IEEE13Transformers.dss
+Redirect IEEE13Lines.dss
+Redirect IEEE13Loads.dss
+Redirect IEEE13Capacitors.dss
+
+Set voltagebases=[115.0, 4.16, 2.4, 0.48]
+Calcvoltagebases
+
+Buscoords BusCoords.dss

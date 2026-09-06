@@ -1,0 +1,4 @@
+! IEEE 13-Bus Capacitors
+
+New Capacitor.Cap675 Bus1=675.1.2.3 phases=3 kvar=600.0 kV=4.16
+New Capacitor.Cap611 Bus1=611.3 phases=1 kvar=100.0 kV=2.40

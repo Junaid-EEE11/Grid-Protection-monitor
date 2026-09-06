@@ -1,0 +1,15 @@
+! IEEE 123-Bus Line Code Definitions
+! Matrix definitions for 3-phase, 2-phase, and 1-phase overhead lines and underground cables
+
+New linecode.1 nphases=3 rmatrix=[0.086 | 0.0298 0.0883 | 0.0293 0.0301 0.0874] xmatrix=[0.2053 | 0.0934 0.2072 | 0.0883 0.0952 0.206] units=kft cmatrix=[2.75 | -0.65 2.65 | -0.45 -0.7 2.8]
+New linecode.2 nphases=3 rmatrix=[0.097 | 0.0301 0.0969 | 0.0298 0.0293 0.0965] xmatrix=[0.2157 | 0.0952 0.2147 | 0.0934 0.0883 0.215] units=kft cmatrix=[2.55 | -0.6 2.45 | -0.4 -0.65 2.6]
+New linecode.3 nphases=3 rmatrix=[0.111 | 0.0293 0.1119 | 0.0301 0.0298 0.111] xmatrix=[0.2263 | 0.0883 0.2253 | 0.0952 0.0934 0.226] units=kft cmatrix=[2.35 | -0.55 2.25 | -0.35 -0.6 2.4]
+New linecode.4 nphases=3 rmatrix=[0.126 | 0.0298 0.1269 | 0.0293 0.0301 0.126] xmatrix=[0.2369 | 0.0934 0.2359 | 0.0883 0.0952 0.237] units=kft cmatrix=[2.15 | -0.5 2.05 | -0.3 -0.55 2.2]
+New linecode.5 nphases=3 rmatrix=[0.142 | 0.0301 0.1419 | 0.0298 0.0293 0.142] xmatrix=[0.2475 | 0.0952 0.2465 | 0.0934 0.0883 0.248] units=kft cmatrix=[1.95 | -0.45 1.85 | -0.25 -0.5 2.0]
+New linecode.6 nphases=2 rmatrix=[0.163 | 0.0298 0.163] xmatrix=[0.2608 | 0.0934 0.2608] units=kft cmatrix=[1.8 | -0.4 1.8]
+New linecode.7 nphases=2 rmatrix=[0.185 | 0.0301 0.185] xmatrix=[0.2741 | 0.0952 0.2741] units=kft cmatrix=[1.6 | -0.35 1.6]
+New linecode.8 nphases=2 rmatrix=[0.208 | 0.0293 0.208] xmatrix=[0.2874 | 0.0883 0.2874] units=kft cmatrix=[1.4 | -0.3 1.4]
+New linecode.9 nphases=1 rmatrix=[0.232] xmatrix=[0.3007] units=kft cmatrix=[1.2]
+New linecode.10 nphases=1 rmatrix=[0.258] xmatrix=[0.314] units=kft cmatrix=[1.0]
+New linecode.11 nphases=1 rmatrix=[0.285] xmatrix=[0.3273] units=kft cmatrix=[0.8]
+New linecode.12 nphases=3 rmatrix=[0.152 | 0.035 0.152 | 0.035 0.035 0.152] xmatrix=[0.105 | 0.03 0.105 | 0.03 0.03 0.105] units=kft cmatrix=[8.5 | -1.5 8.5 | -1.5 -1.5 8.5]

@@ -1,0 +1,30 @@
+! IEEE 123-Bus Step Voltage Regulators
+! Reg1 (3-phase bank at Substation 150->149)
+! Reg2 (Phase A at bus 9->14)
+! Reg3 (Phases A and C at bus 25->26)
+! Reg4 (Phases A, B, C at bus 160->67)
+
+New Transformer.Reg1a  phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[150.1 149.1] %LoadLoss=0.00001 ppm=0.0
+New Transformer.Reg1b  phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[150.2 149.2] %LoadLoss=0.00001 ppm=0.0
+New Transformer.Reg1c  phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[150.3 149.3] %LoadLoss=0.00001 ppm=0.0
+
+New RegControl.Reg1a transformer=Reg1a winding=2 vreg=120 band=2 ptratio=20 ctprim=700 R=0.4 X=0.4
+New RegControl.Reg1b transformer=Reg1b winding=2 vreg=120 band=2 ptratio=20 ctprim=700 R=0.4 X=0.4
+New RegControl.Reg1c transformer=Reg1c winding=2 vreg=120 band=2 ptratio=20 ctprim=700 R=0.4 X=0.4
+
+New Transformer.Reg2a  phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[9.1 14.1] %LoadLoss=0.00001 ppm=0.0
+New RegControl.Reg2a transformer=Reg2a winding=2 vreg=120 band=2 ptratio=20 ctprim=50 R=0.4 X=0.4
+
+New Transformer.Reg3a  phases=1 XHL=0.01 kvas=[1000 1000] kVs=[2.4 2.4] Buses=[25.1 26.1] %LoadLoss=0.00001 ppm=0.0
+New Transformer.Reg3c  phases=1 XHL=0.01 kvas=[1000 1000] kVs=[2.4 2.4] Buses=[25.3 26.3] %LoadLoss=0.00001 ppm=0.0
+
+New RegControl.Reg3a transformer=Reg3a winding=2 vreg=120 band=2 ptratio=20 ctprim=50 R=0.4 X=0.4
+New RegControl.Reg3c transformer=Reg3c winding=2 vreg=120 band=2 ptratio=20 ctprim=50 R=0.4 X=0.4
+
+New Transformer.Reg4a  phases=1 XHL=0.01 kvas=[1000 1000] kVs=[2.4 2.4] Buses=[160.1 67.1] %LoadLoss=0.00001 ppm=0.0
+New Transformer.Reg4b  phases=1 XHL=0.01 kvas=[1000 1000] kVs=[2.4 2.4] Buses=[160.2 67.2] %LoadLoss=0.00001 ppm=0.0
+New Transformer.Reg4c  phases=1 XHL=0.01 kvas=[1000 1000] kVs=[2.4 2.4] Buses=[160.3 67.3] %LoadLoss=0.00001 ppm=0.0
+
+New RegControl.Reg4a transformer=Reg4a winding=2 vreg=124 band=2 ptratio=20 ctprim=300 R=0.6 X=1.3
+New RegControl.Reg4b transformer=Reg4b winding=2 vreg=124 band=2 ptratio=20 ctprim=300 R=0.6 X=1.3
+New RegControl.Reg4c transformer=Reg4c winding=2 vreg=124 band=2 ptratio=20 ctprim=300 R=0.6 X=1.3

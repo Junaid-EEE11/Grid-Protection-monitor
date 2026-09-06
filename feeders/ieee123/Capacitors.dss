@@ -1,0 +1,6 @@
+! IEEE 123-Bus Shunt Capacitors
+
+New Capacitor.C83 Bus1=83.1.2.3 phases=3 kvar=600.0 kV=4.16
+New Capacitor.C88a Bus1=88.1 phases=1 kvar=50.0 kV=2.40
+New Capacitor.C90b Bus1=90.2 phases=1 kvar=50.0 kV=2.40
+New Capacitor.C92c Bus1=92.3 phases=1 kvar=50.0 kV=2.40

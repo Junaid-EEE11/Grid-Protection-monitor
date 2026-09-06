@@ -1,0 +1,59 @@
+# Default Configuration for Power Distribution Fault Research Framework
+
+feeder:
+  name: "ieee123"
+  master_path: "feeders/ieee123/IEEE123Master.dss"
+  num_nodes: 123
+  nominal_voltage_kv: 4.16
+
+simulation:
+  seed: 42
+  num_normal: 60
+  load_multipliers: [0.70, 0.85, 1.00, 1.15, 1.30]
+  fault_resistances: [0.01, 0.50, 2.00, 10.00, 25.00, 50.00]
+  der_penetrations_kw: [0.0, 250.0, 500.0]
+  measurement_noise_std: 0.01
+  sensor_coverage: "dense"
+
+features:
+  use_physics_features: true
+  include_sequence_components: true
+  include_differentials: true
+  raw_feature_dim: 9
+  total_node_feature_dim: 20
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  protocols:
+    - "in_distribution"
+    - "held_out_locations"
+    - "held_out_operating"
+
+model:
+  name: "physics_guided_gnn"
+  backbone: "gcn"
+  hidden_dim: 128
+  num_layers: 3
+  dropout: 0.20
+  num_fault_types: 5
+
+training:
+  epochs: 35
+  batch_size: 32
+  lr: 0.001
+  weight_decay: 0.0001
+  patience: 8
+  lambda_det: 1.0
+  lambda_type: 1.0
+  lambda_loc: 1.5
+
+paths:
+  data_dir: "data"
+  raw_data_dir: "data/raw"
+  processed_dir: "data/processed"
+  splits_dir: "data/splits"
+  results_dir: "results"
+  figures_dir: "results/figures"
+  metrics_dir: "results/metrics"

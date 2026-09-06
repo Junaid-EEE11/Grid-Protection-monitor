@@ -1,0 +1,42 @@
+# Secondary IEEE 13-Bus Test Feeder Configuration
+
+feeder:
+  name: "secondary_ieee13"
+  master_path: "feeders/secondary/IEEE13NodeMaster.dss"
+  num_nodes: 14
+  nominal_voltage_kv: 4.16
+
+simulation:
+  seed: 42
+  num_normal: 30
+  load_multipliers: [0.8, 1.0, 1.2]
+  fault_resistances: [0.01, 1.0, 10.0, 30.0]
+  der_penetrations_kw: [0.0, 200.0]
+  measurement_noise_std: 0.01
+  sensor_coverage: "dense"
+
+features:
+  use_physics_features: true
+  include_sequence_components: true
+  include_differentials: true
+  raw_feature_dim: 9
+  total_node_feature_dim: 20
+
+splits:
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  protocol: "in_distribution"
+
+model:
+  name: "physics_guided_gnn"
+  backbone: "gcn"
+  hidden_dim: 64
+  num_layers: 2
+  dropout: 0.10
+
+training:
+  epochs: 25
+  batch_size: 16
+  lr: 0.002
+  patience: 6

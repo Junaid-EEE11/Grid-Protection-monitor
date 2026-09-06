@@ -1,0 +1,16 @@
+! IEEE 13-Bus Transformers and Regulators
+
+! Substation Step-Down Transformer: 115 kV Delta to 4.16 kV Grounded Wye, 5 MVA
+New Transformer.Sub Phases=3 Windings=2 XHL=8.0 Buses=[sourcebus.1.2.3 650.1.2.3] Conns=[delta wye] kvas=[5000 5000] kvs=[115 4.16] %r=0.5
+
+! Voltage Regulator at 650->RG60
+New Transformer.Reg1a phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[650.1 RG60.1] %LoadLoss=0.00001
+New Transformer.Reg1b phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[650.2 RG60.2] %LoadLoss=0.00001
+New Transformer.Reg1c phases=1 XHL=0.01 kvas=[2000 2000] kVs=[2.4 2.4] Buses=[650.3 RG60.3] %LoadLoss=0.00001
+
+New RegControl.Reg1a transformer=Reg1a winding=2 vreg=122 band=2 ptratio=20 ctprim=700 R=3 X=9
+New RegControl.Reg1b transformer=Reg1b winding=2 vreg=122 band=2 ptratio=20 ctprim=700 R=3 X=9
+New RegControl.Reg1c transformer=Reg1c winding=2 vreg=122 band=2 ptratio=20 ctprim=700 R=3 X=9
+
+! In-Line Step-Down Transformer 633 to 634: 4.16 kV Grounded Wye to 0.48 kV Grounded Wye, 500 kVA
+New Transformer.XFM1 Phases=3 Windings=2 XHL=2.06 %loadloss=1.1 %noloadloss=0.2 Buses=[633.1.2.3 634.1.2.3] kvas=[500 500] kvs=[4.16 0.480] conns=[wye wye]
